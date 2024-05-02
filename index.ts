@@ -34,14 +34,15 @@ export class AIHelper {
     /**
      * This function creates an assistant and returns its ID
      * The two arrays of files receive a path to the file that you want to read locally.
+     * To provide files to files search or code interpreter, just provide their paths
      */
     public async CreateAssistant(name: string,
         description: string,
         instructions: string,
         withCodeInterpreter: boolean,
         withFilesReader: boolean,
-        codeInterpreterFiles: string[],
-        filesReaderFiles: string[]): Promise<string> {
+        codeInterpreterFiles: string[] = [],
+        filesReaderFiles: string[] = []): Promise<string> {
         return new Promise<string>(async (resolve, reject) => {
             try {
                 var codeInterpreterFileIds: string[] = [];
