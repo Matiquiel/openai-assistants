@@ -1,0 +1,25 @@
+{
+  "name": "openai-assistants",
+  "version": "1.0.0",
+  "description": "A very simple helper code for typescript that has all the basic stuff to interact with openai assistants",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matiquiel/openai-assistants.git"
+  },
+  "keywords": [
+    "openai",
+    "assistants",
+    "chatgpt",
+    "ai"
+  ],
+  "author": "Matias Macotinsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matiquiel/openai-assistants/issues"
+  },
+  "homepage": "https://github.com/Matiquiel/openai-assistants#readme"
+}
