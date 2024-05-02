@@ -1,5 +1,5 @@
 import { OpenAI } from 'openai';
-import * as fs from 'fs';
+import fs from 'fs';
 import { AssistantTool } from 'openai/resources/beta/assistants';
 import { RunCreateParams } from 'openai/resources/beta/threads/runs/runs';
 import { TextContentBlock } from 'openai/resources/beta/threads/messages';
