@@ -1,10 +1,9 @@
 import { OpenAI } from 'openai';
-import fs from 'fs';
 import { AssistantTool } from 'openai/resources/beta/assistants';
 import { RunCreateParams } from 'openai/resources/beta/threads/runs/runs';
 import { TextContentBlock } from 'openai/resources/beta/threads/messages';
 import { ThreadCreateParams } from 'openai/resources/beta/threads/threads';
-
+import fs from 'fs'
 export class AIHelper {
     private client: OpenAI;
 

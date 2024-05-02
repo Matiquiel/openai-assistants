@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/Matiquiel/openai-assistants#readme",
   "dependencies": {
-    "openai": "^4.40.0",
-    "@types/node": "^18.11.18"
+    "openai": "^4.40.0"
   }
 }
