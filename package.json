@@ -26,6 +26,6 @@
     "openai": "^4.40.0"
   },
   "devDependencies": {
-    "@types/node": "^18.0.0"
+    "@types/node": "^18.11.18"
   }
 }
