@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Matiquiel/openai-assistants.git"
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/Matiquiel/openai-assistants#readme",
   "dependencies": {
-    "openai": "^4.40.0"
+    "openai": "^4.40.0",
+    "@types/node": "^18.11.18"
   }
 }
