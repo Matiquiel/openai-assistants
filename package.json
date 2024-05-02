@@ -1,6 +1,6 @@
 {
   "name": "openai-assistants",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A very simple helper code for typescript that has all the basic stuff to interact and create openai assistants, threads, messages, etc",
   "main": "ai_helper.js",
   "scripts": {
