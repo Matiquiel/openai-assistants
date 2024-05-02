@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/Matiquiel/openai-assistants.git"
   },
+  "files": [
+    "*"
+  ],
   "keywords": [
     "openai",
     "assistants",
