@@ -1,11 +1,12 @@
 {
   "name": "openai-assistants",
-  "version": "1.0.3",
+  "version": "1.0.13",
   "description": "A very simple helper code for typescript that has all the basic stuff to interact and create openai assistants, threads, messages, etc",
-  "main": "ai_helper.js",
+  "main": "lib/ai_helper.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
+  "type": "commonjs",
   "private": false,
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
     "openai-assistants": "."
   },
   "files": [
-    "*"
+    "lib/**"
   ],
   "keywords": [
     "openai",
@@ -31,5 +32,8 @@
   "homepage": "https://github.com/Matiquiel/openai-assistants#readme",
   "dependencies": {
     "openai": "^4.40.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
   }
 }
