@@ -1,6 +1,6 @@
 import { OpenAI } from 'openai';
 import { AssistantTool } from 'openai/resources/beta/assistants';
-import { RunCreateParams } from 'openai/resources/beta/threads/runs/runs';
+import { RunCreateParams, RunCreateParamsNonStreaming } from 'openai/resources/beta/threads/runs/runs';
 import { TextContentBlock } from 'openai/resources/beta/threads/messages';
 import { ThreadCreateParams } from 'openai/resources/beta/threads/threads';
 import fs from 'fs'
@@ -157,13 +157,24 @@ export class AIHelper {
     /** This method creates a run in a thread. It will read the last messages and generate a response based off them 
      * The method will only return a value once the run has reached a final state
     */
-    public async CreateRun(threadId: string, assistantId: string, extraInstructions: string | undefined = undefined, additionalMessages: RunCreateParams.AdditionalMessage[] | null | undefined = undefined): Promise<string> {
+    public async CreateRun(threadId: string, assistantId: string, extraInstructions: string | undefined = undefined, additionalMessages: RunCreateParams.AdditionalMessage[] | null | undefined = undefined, withFileSearch: boolean = false, withCodeInterpreter: boolean = false): Promise<string> {
         return new Promise<string>((resolve, reject) => {
-            this.client.beta.threads.runs.createAndPoll(threadId, {
+
+            var options: RunCreateParamsNonStreaming = {
                 assistant_id: assistantId,
                 additional_instructions: extraInstructions,
                 additional_messages: additionalMessages,
-            }, { pollIntervalMs: 1000 })
+            };
+
+            if (withFileSearch || withCodeInterpreter) {
+                options.tool_choice = 'required'
+                if (withFileSearch)
+                    options.tools = [{ 'type': 'file_search' }]
+                if (withCodeInterpreter)
+                    options.tools = [{ 'type': 'code_interpreter' }]
+            }
+
+            this.client.beta.threads.runs.createAndPoll(threadId, options, { pollIntervalMs: 1000 })
                 .then(data => {
                     if (data.status == 'completed') resolve(data.id)
                     else reject(data)
