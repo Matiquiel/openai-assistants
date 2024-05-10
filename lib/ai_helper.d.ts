@@ -22,7 +22,7 @@ export declare class AIHelper {
     /** This method creates a run in a thread. It will read the last messages and generate a response based off them
      * The method will only return a value once the run has reached a final state
     */
-    CreateRun(threadId: string, assistantId: string, extraInstructions?: string | undefined, additionalMessages?: RunCreateParams.AdditionalMessage[] | null | undefined): Promise<string>;
+    CreateRun(threadId: string, assistantId: string, extraInstructions?: string | undefined, additionalMessages?: RunCreateParams.AdditionalMessage[] | null | undefined, withFileSearch?: boolean, withCodeInterpreter?: boolean): Promise<string>;
     /** This method returns the last message in a thread.
      * The messages are returned as an array. So
     */
